@@ -1,4 +1,4 @@
-package com.bolton.game;
+package com.bolton.view;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -11,6 +11,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -24,6 +25,7 @@ public class GaminArea extends JPanel {
 	private List<Ellipse2D.Double> snakeParts;
 	private Eat apples;
 	
+	//snake moving area 
 	public GaminArea() {
 		setPreferredSize(new Dimension(AREA_WIDTH, AREA_HEIGHT));
 		java.net.URL resource = getClass().getResource("th.jpg");
@@ -38,6 +40,7 @@ public class GaminArea extends JPanel {
 		initDefaults();
 	}
 
+	// initializing snake
 	public void initDefaults() {
 		// TODO Auto-generated method stub
 		apples = new Eat(200, 200);
@@ -59,6 +62,7 @@ public class GaminArea extends JPanel {
 		return apples;
 	}
 	
+	//draw snake parts and apples 
 	@Override
 	public void paintComponent(Graphics grp) {
 		super.paintComponent(grp);

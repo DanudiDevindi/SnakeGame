@@ -1,4 +1,4 @@
-package com.bolton.game;
+package com.bolton.view;
 
 import java.awt.Color;
 import java.awt.Dimension;

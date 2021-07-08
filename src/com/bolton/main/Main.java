@@ -1,4 +1,4 @@
-package com.bolton.game;
+package com.bolton.main;
 
 import java.awt.EventQueue;
 import java.awt.GridBagLayout;
@@ -7,6 +7,13 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+
+import com.bolton.panel.Panel;
+import com.bolton.util.Grid;
+import com.bolton.view.Board;
+import com.bolton.view.GaminArea;
+import com.bolton.view.Snake;
+import com.bolton.view.SnakePath;
 
 
 public class Main extends JFrame {
@@ -18,26 +25,28 @@ public class Main extends JFrame {
 	private SnakePath direction = SnakePath.UP;
 	private boolean started = false;
 	
+	
+	//initialize game interface game frame and thread
 	public Main() {
 		SnakeComponent();
 		Game();
 		Frame();
 	}
 	
+//	 entry point of the game swing is not thread safe. so used event dispatch thread for running the game
+//	 https://docs.oracle.com/javase/tutorial/uiswing/concurrency/dispatch.html
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			
 			@Override
 			public void run() {
-				// TODO Auto-generated method stub
-				new Main();
+			    new Main();
 				
 			}
 		});
 	}
 
 	private void SnakeComponent() {
-		// TODO Auto-generated method stub
 		setLayout(new GridBagLayout());
 		addKeyListener(new KeyboardHandler());
 		gameArea = new GaminArea();
@@ -65,19 +74,14 @@ public class Main extends JFrame {
 			
 	 }
 		
-		
+		//strating a new game 
 		public void newGame() {
 			 started = true;
 			thread.start();
 		}
 
 		
-		
-//		public static void main (String [] args) {
-//		System.out.println("sanke game");
-//		}
-
-		public void gameover() {
+	public void gameover() {
 			// TODO Auto-generated method stub
 		int returnValue = JOptionPane.showConfirmDialog(this, "Do you want to start a new game?", "GAME OVER!",
 							JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
@@ -103,6 +107,7 @@ public class Main extends JFrame {
 					}
 		}
 
+	// actions for arrow keys 
  private class KeyboardHandler extends KeyAdapter {
 		
 		 @Override

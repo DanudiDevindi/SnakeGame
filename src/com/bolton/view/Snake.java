@@ -1,4 +1,4 @@
-package com.bolton.game;
+package com.bolton.view;
 
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Ellipse2D.Double;
@@ -8,9 +8,12 @@ import java.util.List;
 
 public class Snake {
 	
+	//snake parts
+	// one part is a 20 x 20 px ellipse.
 	private List<Ellipse2D.Double> snakeParts;
 	public static final int XSIZE = 20;
 	public static final int YSIZE = 20;
+	
 	private GaminArea gameField;
 	private Board scoreBoard;
 	private SnakePath route;
@@ -35,10 +38,12 @@ public class Snake {
 		
 	}
 
+	//change snake directions
 	public void changeDirection(SnakePath route) {
 		this.route = route;
 	}
 	
+	//snake moving in currunt direction
 	public void move() {
 		switch (route) {
 		case UP:

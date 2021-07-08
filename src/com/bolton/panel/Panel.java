@@ -1,5 +1,11 @@
-package com.bolton.game;
+package com.bolton.panel;
 
+import com.bolton.main.Main;
+import com.bolton.view.Eat;
+import com.bolton.view.GaminArea;
+import com.bolton.view.Snake;
+
+//running game and making snake movings
 public class Panel implements Runnable {
 	
 	public static final int DELAY = 400;
@@ -20,7 +26,7 @@ public class Panel implements Runnable {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+	
 		try {
 			while(true) {
 				snake.move();
@@ -34,8 +40,7 @@ public class Panel implements Runnable {
 				Thread.sleep(DELAY);
 			}
 		}catch (InterruptedException e) {
-			// TODO: handle exception
-			main.gameover();
+		    main.gameover();
 		}
 		
 	}

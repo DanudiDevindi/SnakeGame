@@ -1,4 +1,4 @@
-package com.bolton.game;
+package com.bolton.view;
 
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Ellipse2D.Double;
@@ -21,6 +21,7 @@ public class Eat {
 		
 	}
 	
+	//generate the random numbers
 	private double getNewSnakePart() {
 		double dou = 1111;
 		while(dou >= 400 || dou % 20 !=0) {
@@ -31,6 +32,7 @@ public class Eat {
 		
 	}
 	
+	// generate new coordinates
 	public void next(Snake snake) {
 		for(Ellipse2D.Double sn : snake.getSnakeParts()) {
 			while(x == sn.getMinX() && y == sn.getMinY() ) {

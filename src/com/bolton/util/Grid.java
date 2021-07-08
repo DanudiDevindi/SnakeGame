@@ -1,4 +1,4 @@
-package com.bolton.game;
+package com.bolton.util;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
