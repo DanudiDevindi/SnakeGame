@@ -9,6 +9,7 @@ This project is simple snake game.
 ## Technologies
 Project is created with:
 * Java 1.8
+* Junit 5
 
 ## Start game 
 press any arrow key in keyboard 
