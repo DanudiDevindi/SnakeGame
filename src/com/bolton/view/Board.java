@@ -9,6 +9,10 @@ import java.awt.Graphics2D;
 import javax.swing.JPanel;
 
 public class Board extends JPanel{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static final int BOARD_WIDTH = 800;
 	public static final int BOARD_HEIGHT = 50;
 	private Font FONT = null;

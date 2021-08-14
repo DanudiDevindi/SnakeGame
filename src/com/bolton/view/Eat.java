@@ -1,7 +1,6 @@
 package com.bolton.view;
 
 import java.awt.geom.Ellipse2D;
-import java.awt.geom.Ellipse2D.Double;
 
 public class Eat {
 	
